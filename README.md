@@ -15,4 +15,16 @@ Standalone TOOP Connector NG
   -V, --version              Print version information and exit.
 ```
 
-Start via `tc-jetty start` and shut it down with `tc-jetty stop`.
+Start via `start` and shut it down with `stop`.
+
+How to run it:
+
+```
+java -jar tc-jetty-2.0.0-beta5-full.jar start
+```
+
+to add a custom configuration file add the propert "config.file" like this:
+
+```
+java -Dconfig.file=/path/to/your/file.properties -jar tc-jetty-2.0.0-beta5-full.jar start
+```
