@@ -69,7 +69,8 @@ public class MainTC implements Callable <Integer>
           // Is
           // "jar:file:/C:/dev/git/tc-jetty/target/tc-jetty-2.0.0-SNAPSHOT-jar-with-dependencies.jar!/WEB-INF/web.xml"
           // standalone
-          LOGGER.info (sURL);
+          if (LOGGER.isDebugEnabled ())
+            LOGGER.debug ("Using web.xml resource: '" + sURL + "'");
           js.setWebXmlResource (aCPR.getAsURL ().toExternalForm ());
 
           // Go go go
@@ -92,7 +93,6 @@ public class MainTC implements Callable <Integer>
 
   public static void main (final String [] aArgs)
   {
-    LOGGER.info ("Starting standalone TOOP Connector NG");
     final CommandLine cmd = new CommandLine (new MainTC ());
     cmd.setCaseInsensitiveEnumValuesAllowed (true);
     final int nExitCode = cmd.execute (aArgs);
